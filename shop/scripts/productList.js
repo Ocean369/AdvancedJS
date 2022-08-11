@@ -1,11 +1,13 @@
 'use strict';
 
+const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+
 class ProductItem {
-    constructor(product = { id: 0, title: 'Out of stock', price: 0 }, img = './images/') {
-        this.title = product.title;
-        this.id = product.id;
+    constructor(product, img = './images/') {
+        this.title = product.product_name;
+        this.id = product.id_product;
         this.price = product.price;
-        this.img = `${img}${product.title}.jpeg`;
+        this.img = `${img}${product.id_product}.png`;
     }
 
     render() {
@@ -23,18 +25,23 @@ class ProductItem {
 class ProductList {
     constructor(container = '.goods-list') {
         this.container = container;
-        this.goods = [];
-        this._fetchProducts();//рекомендация, чтобы метод был вызван в текущем классе
-        this.render();//вывод товаров на страницу
+        this.goods = [];//массив товаров из JSON документа
+        this._getProducts()
+            .then(data => {
+                //data - объект js
+                this.goods = data;
+                this.render()
+            });
     }
 
-    _fetchProducts() {
-        this.goods = [
-            { id: 1, title: 'Shirt', price: 150 },
-            { id: 2, title: 'Socks', price: 50 },
-            { id: 3, title: 'Jacket', price: 350 },
-            { id: 4, title: 'Shoes', price: 250 },
-        ];
+    _getProducts() {
+
+        return fetch(`${API}/catalogData.json`)
+            .then(result => result.json())
+            .catch(error => {
+                console.log(error);
+            });
+
     }
 
     render() {
@@ -43,6 +50,7 @@ class ProductList {
             const item = new ProductItem(product);
             block.insertAdjacentHTML("beforeend", item.render());
         }
+        document.querySelector('.totalPrice span').textContent = this.totalPriceProducts();
     }
 
     totalPriceProducts() {
@@ -50,9 +58,6 @@ class ProductList {
         for (let product of this.goods) {
             sumPrice += product.price;
         }
-        return `Суммарная стоимость всех товаров $${sumPrice}`
+        return sumPrice
     }
 }
-
-let list = new ProductList();
-document.querySelector('.totalPrice').textContent = list.totalPriceProducts();

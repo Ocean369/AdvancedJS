@@ -1,31 +1,29 @@
 
 
-let cartCount = document.querySelector('.cart-count');
-let cartBtn = document.querySelector('.cart-button');
-let AddBtns = document.querySelectorAll('.addToCart');
 
+let list = new ProductList();
 let cart = new CartList();
 
-/**
- * Выводит кол-во разных товаров в корзине
- */
-function showCountToCart() {
-    if (cart.products.length == 0)
-        cartCount.style.display = 'none';
-    else {
-        cartCount.style.display = 'block';
-        cartCount.textContent = cart.products.length;
-    }
-}
+// let cartCount = document.querySelector('.cart-count');
+let cartBtn = document.querySelector('.cart-button');
+let closeCartBtn = document.querySelector('.cartUser-close');
+
 
 /**
- * Добавляем обработку события click всем кнопкам "Добавить"
- * @event button#click
- * 
+ * Добавляем обработку события click на закрытие окна корзины
  */
-AddBtns.forEach((btn) => {
-    btn.addEventListener('click', setDataCartProduct);
+closeCartBtn.addEventListener('click', () => {
+    document.querySelector('.cartUser').classList.remove('cartUser__show');
 })
+
+
+// /**
+//  * Добавляем обработку события click всем кнопкам "Добавить"
+//  * @event button#click
+//  * 
+//  */
+document.querySelector('.goods-list').addEventListener('click', setDataCartProduct);
+
 
 /**
  *  Добавляем обработку события click кнопке "Корзина"
@@ -43,16 +41,19 @@ cartBtn.addEventListener('click', () => {
 /**
  * Берет параметр id из event.target
  * Находит в базе товар по данному id и добавляет его в список товаров в корзине.
- * Показывает число товаров в корзине возле кнопки " Корзина" 
- * @param {HTMLButtonElement} event 
+ * 
+ * @param {HTMLElement} event 
  */
 function setDataCartProduct(event) {
-    let id = event.target.dataset.id;
-    list.goods.forEach(product => {
-        if (product.id == id) {
-            cart.addToCart(product);
-        }
-    })
-    showCountToCart();
+    let teg = event.target;
+    if (teg.localName === 'button') {
+        let id = +teg.dataset.id;
+        list.goods.forEach(product => {
+            if (product.id_product == id) {
+                cart.addToCart(product);
+            }
+        })
+        // showCountToCart();
+    }
 }
 
