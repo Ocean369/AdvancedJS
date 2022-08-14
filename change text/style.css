@@ -1,0 +1,85 @@
+.field {
+  width: 800px;
+  height: 500px;
+  border: 5px double green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin: 40px auto;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.field_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.mainText,
+.changeText {
+  width: 300px;
+  height: 400px;
+  border: 3px solid gray;
+}
+
+.registration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin: 20px auto;
+  width: 800px;
+  padding: 20px;
+  border: 3px solid darkturquoise;
+}
+
+.registration_label {
+  color: darkslategray;
+  font-size: 20px;
+}
+
+.registration_input {
+  width: 200px;
+  height: 25px;
+}
+
+.registration_text {
+  width: 350px;
+  height: 50px;
+}
+
+.registration_btn {
+  background-color: rgba(62, 121, 121, 0.712);
+  width: 200px;
+  height: 25px;
+}
+
+.error {
+  border-color: red;
+}
+
+.error_name,
+.error_tel,
+.error_mail,
+.error_about {
+  margin-top: -10px;
+  color: red;
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
