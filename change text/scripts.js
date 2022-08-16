@@ -17,20 +17,26 @@ select.addEventListener('change', (event) => {
  * Задание 3
  */
 
-let submit = document.querySelector('button');
+let submit = document.querySelector('form');
 let inputs = document.querySelectorAll('input');
 
-submit.addEventListener('click', checkData);
+submit.addEventListener('submit', checkData);
 
+/**
+ * Проверка введенных данных и отправка
+ * @param {Event} event form submit 
+ * @listens submit#submit
+ */
 function checkData(event) {
     closeError();
+    let error = false;
 
     inputs.forEach(input => {
         let re = new RegExp;
+
         switch (input.getAttribute('id')) {
             case 'name':
-                console.log('name - ' + input.value);
-                re = /^[a-z]+$/i;
+                re = /^[a-zа-я]+$/i;
                 break;
             case 'tel':
                 re = /^(\+7)(\(\d{3}\))(\d{3})\-(\d{4})$/i;
@@ -39,14 +45,15 @@ function checkData(event) {
                 re = /^\w+([\.-]*\w+)*@[a-z]+\.[a-z]{2,4}$/i;
                 break;
             default:
-                re = /^(\D*[a-z]+\w*\s*){5,}/i;
+                re = /^(\D*[a-zа-я\d]+\w*\s*){5,}/i;
                 break;
         }
+
         if (!re.test(input.value)) {
             showError(input, input.getAttribute('id'));
+            error = true;
             event.preventDefault();
         }
-
     })
 }
 

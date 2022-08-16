@@ -46,18 +46,18 @@
 
     </div>
     <h1>Задание 3 </h1>
-    <form action="#" class='registration'>
+    <form action="#" class='registration' method="POST">
         <label class='registration_label' for="name">Имя</label>
-        <input class='registration_input' type="text" name="userName" id="name" placeholder="Андрей">
+        <input class='registration_input' type="text" name="name" id="name" placeholder="Андрей">
         <span class="error_name">Не правильно ввели данные. Имя может содержать только буквы не менее 1.</span>
         <label class='registration_label' for="tel">Номер телефона</label>
-        <input class='registration_input' type="tel" name="userTel" id="tel" placeholder="+7(000)000-0000">
+        <input class='registration_input' type="tel" name="tel" id="tel" placeholder="+7(000)000-0000">
         <span class="error_tel">Не правильно ввели данные. Телефон должен иметь вид +7(000)000-0000.</span>
         <label class='registration_label' for="mail">E-mail</label>
-        <input class='registration_input' type="email" name="userMail" id="mail" placeholder="mymail@mail.ru">
+        <input class='registration_input' type="email" name="mail" id="mail" placeholder="mymail@mail.ru">
         <span class="error_mail">Не правильно ввели данные</span>
         <label class='registration_label' for="about">Напишите пару слов о себе</label>
-        <input class='registration_text' type="text" name="aboutUser" id="about">
+        <input class='registration_text' type="text" name="about" id="about">
         <span class="error_about">Не правильно ввели данные. Введите не менее 5 символов.</span>
         <button class='registration_btn'>Отправить</button>
     </form>
