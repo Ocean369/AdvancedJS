@@ -55,6 +55,53 @@
   font-size: 18px;
 }
 
+.cart-count {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 2px;
+  background-color: grey;
+  color: white;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 1px 5px;
+}
+
+#cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 20px;
+}
+
+.search {
+  border-bottom: 2px solid pink;
+  padding-left: 10px;
+}
+
+.search-field {
+  width: 200px;
+  height: 36px;
+  background-color: black;
+  border: none;
+  color: lightslategray;
+}
+
+.search-field:focus {
+  outline: none;
+}
+
+.search-btn {
+  background-color: black;
+  color: pink;
+  border: none;
+  font-size: 20px;
+}
+
 .cartUser {
   padding: 10px;
   position: absolute;
@@ -63,9 +110,11 @@
   z-index: 1;
   background: white;
   color: #4D4D4D;
-  display: none;
   -webkit-box-shadow: 1px 3px 5px 1px lightslategrey;
           box-shadow: 1px 3px 5px 1px lightslategrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -106,16 +155,21 @@
 .cartUser-body {
   display: -ms-grid;
   display: grid;
+  grid-auto-rows: 35px;
+}
+
+.cartUser-body-item {
+  display: -ms-grid;
+  display: grid;
   -ms-grid-columns: 160px 100px 120px 100px;
       grid-template-columns: 160px 100px 120px 100px;
-  grid-auto-rows: 35px;
   font-size: 14px;
   font-weight: 300;
   color: lightslategray;
   border-bottom: 1px solid lightgray;
 }
 
-.cartUser-body div {
+.cartUser-body-item div {
   padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -169,7 +223,7 @@
 }
 
 .countItem {
-  width: 22px;
+  width: 42px;
   height: 20px;
   text-align: center;
   border: none;
@@ -180,19 +234,6 @@
   height: 20px;
   border: none;
   border-radius: 50%;
-}
-
-.cart-count {
-  position: absolute;
-  display: block;
-  top: 0;
-  right: 2px;
-  background-color: grey;
-  color: white;
-  border-radius: 50%;
-  font-size: 15px;
-  font-weight: lighter;
-  padding: 1px 5px;
 }
 
 .goods-list {

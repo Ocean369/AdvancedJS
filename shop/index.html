@@ -7,44 +7,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taleta</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     <header class="header">
         <h1 class='header-title'>Taleta</h1>
-        <button class="cart-button" type="button">Корзина <span class='cart-count'></span></button>
-        <div class="cartUser">
-            <div class='cartUser-close'>
-                <img src="images/close.svg" alt="close">
-            </div>
-            <div class="cartUser-head">
-                <div>Название товара</div>
-                <div>Кол-во</div>
-                <div>Цена за штуку</div>
-                <div>Итого</div>
+        <div id="cart">
+            <div class="search">
+                <input type='text' class="search-field" v-model='search' @input='filter' />
+                <button class="search-btn @click='filter'">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
 
-            <div class="cartUser-body">
-            </div>
-            <div class="cartUser-foot">
-                <div>Товаров в корзине на сумму:</div>
-                <div id='totalAmount'>0</div>
+            <button class="cart-button" @click="show=!show">Корзина <span class='cart-count'
+                    v-show='showCount'>{{allCount}}</span></button>
+            <!-- </div> -->
+
+            <div class="cartUser" v-show='show'>
+                <div class='cartUser-close'>
+                    <img src="images/close.svg" alt="close" @click='show=!show'>
+                </div>
+                <h1 style='padding: 10px;' v-show='cartList.length == 0'>Корзина пуста</h1>
+                <div class="cartUser-head" v-show='cartList.length > 0'>
+                    <div>Название товара</div>
+                    <div>Кол-во</div>
+                    <div>Цена за штуку</div>
+                    <div>Итого</div>
+                </div>
+                <div class="cartUser-body" v-show='cartList.length > 0'>
+
+                    <div class='cartUser-body-item' v-for="product of cartList" :key="product.id_product">
+                        <div>
+                            {{product.product_name}}
+                        </div>
+                        <div class=' cartUser-body_count'>
+                            <input class='countItem' type="number" name="countItem" min="1"
+                                v-model.number='product.quantity' @input='amount(product)' />
+                            pc.
+                        </div>
+                        <div>{{product.price}}</div>
+                        <div class='cartUser-body_amount'><span>{{product.amount}}</span>
+                            <img src="images/bin.png" alt="bin" @click='deleteFromCart(product)'>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="cartUser-foot" v-show='cartList.length > 0'>
+                    <div>Товаров в корзине на сумму:</div>
+                    <div>$ {{totalAmount}}</div>
+                </div>
             </div>
         </div>
     </header>
 
 
-    <main>
-        <div class="goods-list">
-        </div>
 
-        <div class='totalPrice'>Суммарная стоимость всех товаров на странице равна $<span></span></div>
+
+    <main>
+        <div class="goods-list" id='catalog'>
+            <h5 v-show='products.length === 0'>Склад пуст</h5>
+            <h5 style='width: 300px' v-show='filtered.length === 0 && products.length > 0'>По
+                вашему запросу ничего не
+                найдено</h5>
+            <div class="goods-item" v-for='product of filtered' :key='product.id_product'>
+                <img class='goods-img' :src='product.img' :alt='product.product_name'>
+                <div class='goods-description'>
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}}</p>
+                    <button class="addToCart" @click='addProduct(product)'>Купить</button>
+                </div>
+            </div>
+        </div>
     </main>
-    <script src="scripts/productList.js"></script>
-    <script src="scripts/cartList.js"></script>
-    <script async src="scripts/cartOpen.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="scripts/cartVue.js"></script>
+    <script src="scripts/catalogVue.js"></script>
 </body>
 
 </html>

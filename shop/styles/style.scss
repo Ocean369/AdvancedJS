@@ -50,6 +50,48 @@
     font-size: 18px;
 }
 
+.cart-count {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 2px;
+    background-color: grey;
+    color: white;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: lighter;
+    padding: 1px 5px;
+}
+
+#cart {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.search {
+    border-bottom: 2px solid pink;
+    padding-left: 10px;
+    &-field {
+        width: 200px;
+        height: 36px;
+        background-color: black;
+        border: none;
+        color: lightslategray;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-btn {
+        background-color: black;
+        color: pink;
+        border: none;
+        font-size: 20px;
+    }
+}
+
 .cartUser {
     padding: 10px;
     position: absolute;
@@ -58,9 +100,9 @@
     z-index: 1;
     background: white;
     color: #4D4D4D;
-    display: none;
+    // display: none;
     box-shadow: 1px 3px 5px 1px lightslategrey;
-    // display:flex;
+    display:flex;
     flex-direction: column;
     align-items: center;
     font-size: 14px;
@@ -90,17 +132,22 @@
     
     &-body {
         display: grid;
-        grid-template-columns: 160px 100px 120px 100px;
+        // grid-template-columns: 160px 100px 120px 100px;
         grid-auto-rows: 35px;
-        font-size: 14px;
-        font-weight: 300;
-        color: lightslategray;
-        border-bottom: 1px solid lightgray;
+
+        &-item {
+            display: grid;
+            grid-template-columns: 160px 100px 120px 100px;
+            font-size: 14px;
+            font-weight: 300;
+            color: lightslategray;
+            border-bottom: 1px solid lightgray;
 
 
-        & div {
-            padding: 10px;
-            box-sizing: border-box;
+            & div {
+                padding: 10px;
+                box-sizing: border-box;
+            }
         }
 
         &_amount {
@@ -141,7 +188,7 @@
 }
 
 .countItem {
-    width: 22px;
+    width: 42px;
     height: 20px;
     text-align: center;
     border:none;
@@ -154,18 +201,7 @@
     border-radius: 50%;
 }
 
-.cart-count {
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 2px;
-    background-color: grey;
-    color: white;
-    border-radius: 50%;
-    font-size: 15px;
-    font-weight: lighter;
-    padding: 1px 5px;
-}
+
 
 .goods-list {
     padding: 20px 40px;
