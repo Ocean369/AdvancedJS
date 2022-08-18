@@ -50,8 +50,8 @@
                                 v-model.number='product.quantity' @input='amount(product)' />
                             pc.
                         </div>
-                        <div>{{product.price}}</div>
-                        <div class='cartUser-body_amount'><span>{{product.amount}}</span>
+                        <div>$ {{product.price}}</div>
+                        <div class='cartUser-body_amount'><span>$ {{product.amount}}</span>
                             <img src="images/bin.png" alt="bin" @click='deleteFromCart(product)'>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                 <img class='goods-img' :src='product.img' :alt='product.product_name'>
                 <div class='goods-description'>
                     <h3>{{product.product_name}}</h3>
-                    <p>{{product.price}}</p>
+                    <p>$ {{product.price}}</p>
                     <button class="addToCart" @click='addProduct(product)'>Купить</button>
                 </div>
             </div>
