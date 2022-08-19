@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taleta</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <h1 class='header-title'>Taleta</h1>
+        <div id="cart">
+
+            <search></search>
+
+            <button class="cart-button" @click="showCart=!showCart">Корзина <span class='cart-count'
+                    v-show='showCount'>{{allCount}}</span></button>
+
+            <cart :cart-items="cartList" :visibility="showCart"></cart>
+
+        </div>
+    </header>
+
+
+
+
+    <main id='catalog'>
+
+
+        <error-message :visibility='error'></error-message>
+        <catalog :products='filtered'></catalog>
+        <filter-message></filter-message>
+
+
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="scripts/cartComponent.js"></script>
+    <script src="scripts/catalogComponent.js"></script>
+    <script src="scripts/errorComponent.js"></script>
+    <script src="scripts/filterComponent.js"></script>
+    <script src="scripts/cartVue.js"></script>
+    <script src="scripts/catalogVue.js"></script>
+</body>
+
+</html>
