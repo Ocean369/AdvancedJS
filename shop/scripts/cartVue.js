@@ -10,8 +10,8 @@ const cart = new Vue({
         cartUrl: '/getBasket.json',
         cartList: [],
         search: '',
-        show: false,
-        showCount: false
+        showCart: false,
+        showCount: false,
     },
     computed: {
         totalAmount: function () {
@@ -46,7 +46,7 @@ const cart = new Vue({
         deleteFromCart(item) {
             let find = this.cartList.find(product => item.id_product === product.id_product);
             if (find)
-                this.cartList.splice(this.cartList.indexOf(item), 1);
+                this.$data.cartList.splice(this.cartList.indexOf(item), 1);
         }
     },
     mounted() {
@@ -54,7 +54,7 @@ const cart = new Vue({
             .then(data => {
                 for (let el of data.contents) {
                     this.$set(el, 'amount', (el.quantity * el.price));
-                    this.cartList.push(el);
+                    this.$data.cartList.push(el);
                 }
             })
     }

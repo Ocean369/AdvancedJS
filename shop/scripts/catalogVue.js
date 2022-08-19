@@ -12,7 +12,7 @@ const catalog = new Vue({
         filtered: [],
         imgCatalog: './images/',
         search: '',
-        show: false
+        error: false
     },
     methods: {
         filter() {
@@ -24,10 +24,13 @@ const catalog = new Vue({
             });
         },
         getJson(url) {
+            this.error = false;
             return fetch(url)
                 .then(result => result.json())
                 .catch(error => {
                     console.log(error);
+                    if (this.products.length == 0)
+                        this.$data.error = true;
                 })
         },
         addProduct(item) {
