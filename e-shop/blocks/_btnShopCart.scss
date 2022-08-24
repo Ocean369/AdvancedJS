@@ -1,0 +1,16 @@
+.b-btnShopCart {
+    padding: 16px 40px;
+    color: #000000;
+    text-align: center;
+    border: 1px solid #A4A4A4;
+    background: #FFFFFF;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    @media (max-width:668px) {
+        padding: 10px 18px;
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: none;
+    }
+}

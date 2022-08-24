@@ -1,0 +1,30 @@
+.b-userLogin {
+    display: grid;
+    grid-template-columns: minmax(auto,360px);
+    row-gap: 20px;
+
+    &__title {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 22px;
+        color: #222222;
+    }
+
+    &__loginPass {
+        padding: 10px 15px 13px;
+
+        &::placeholder {
+            font-weight: 300;
+            font-size: 13px;
+            color: #B1B1B1;
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #B1B1B1;
+        margin-top: -6px;
+    }
+}

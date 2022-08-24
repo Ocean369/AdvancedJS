@@ -1,0 +1,42 @@
+.b-shippingAddress {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+    &__title {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+    }
+
+    &__textField {
+        border: 1px solid #A4A4A4;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #222222;
+        padding: 13px 17px 16px;
+        
+        &::placeholder {
+            color: #B1B1B1;
+        }
+    }
+
+    &__button {
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 13px;
+        color: #4A4A4A;
+        border: 1px solid #A4A4A4;
+        padding: 10px 15px;
+        background: #FFFFFF;
+        align-self: flex-start;
+        cursor: pointer;
+        transition-duration: 0.5s;
+
+        &:hover {
+            box-shadow: 2px 5px 5px #A4A4A4;
+        }
+    }
+}

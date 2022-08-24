@@ -1,0 +1,12 @@
+.b-registration {
+    display: grid;
+    grid-template-columns: 360px auto;
+    column-gap: 128px;
+    margin-top: 64px;
+    margin-bottom: 96px;
+
+    @media (max-width: 1024px) {
+        column-gap: 22px;
+    }
+
+}

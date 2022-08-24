@@ -1,0 +1,23 @@
+.b-userName {
+    display: grid;
+    grid-template-columns: minmax(auto,360px);
+    row-gap: 20px;
+
+    &__title {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+    }
+
+    &__firstName, &__lastName {
+        padding: 10px 15px 13px;
+        box-sizing: border-box;
+
+        &::placeholder {
+            font-weight: 300;
+            font-size: 13px;
+            color: #B1B1B1;
+        }
+    }
+}
