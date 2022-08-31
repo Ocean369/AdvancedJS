@@ -1,12 +1,34 @@
+
+import CatalogMenu from './components/catalog_menu';
+import Catalog from './components/catalogComponents';
+import Err from './components/errorComponent';
+import Filter from './components/filterComponent';
+import Footer from './components/footer';
+import Header from './components/header';
+import NavMenu from './components/navMenu';
+import '@babel/polyfill'
+import '../css/style.css';
+
+
+
+
 let app = new Vue({
     el: '#app',
     data: {
-        catalogUrl: '/catalogData.json',
         products: [],
         filtered: [],
-        menuShow: false
+        // menuShow: false
     },
-    components: { cart, products, search, errorMessage, filterMessage, footer_link, menu_block },
+    components: {
+        header_block: Header.header_block,
+        nav_menu: NavMenu.nav_menu,
+        catalog_menu: CatalogMenu.catalog_menu,
+        products: Catalog.products,
+        errorMessage: Err.errorMessage,
+        filterMessage: Filter.filterMessage,
+        footer_block: Footer.footer_block,
+        pagination: Catalog.pagination
+    },
     methods: {
         getJson(url) {
             return fetch(url)
@@ -70,8 +92,8 @@ let app = new Vue({
                 })
         }
 
-    },
-    mounted() {
-        console.log(this)
     }
-})
+});
+
+
+

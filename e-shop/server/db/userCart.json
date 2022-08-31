@@ -5,7 +5,7 @@
         "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
         "img": "./image/products-img/111.jpg",
-        "quantity": 3,
+        "quantity": 4,
         "amount": 52
     },
     {
@@ -14,7 +14,34 @@
         "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 152,
         "img": "./image/products-img/211.jpg",
-        "quantity": 2,
+        "quantity": 5,
         "amount": 152
+    },
+    {
+        "id": 511,
+        "title": "JACKET CAPSULE",
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "price": 58,
+        "img": "./image/products-img/511.jpg",
+        "quantity": 4,
+        "amount": 58
+    },
+    {
+        "id": 611,
+        "title": "TRAUSERS CAPSULE",
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "price": 15,
+        "img": "./image/products-img/611.jpg",
+        "quantity": 2,
+        "amount": 15
+    },
+    {
+        "id": 711,
+        "title": "ELLERY",
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "price": 35.3,
+        "img": "./image/products-img/711.jpg",
+        "quantity": 4,
+        "amount": 35.3
     }
 ]

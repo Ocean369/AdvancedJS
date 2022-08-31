@@ -1,0 +1,45 @@
+{
+  "name": "eshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "watch": "webpack  --mode development -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ocean369/AdvancedJS.git"
+  },
+  "author": "calibr <awcalibr@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ocean369/AdvancedJS/issues"
+  },
+  "homepage": "https://github.com/Ocean369/AdvancedJS#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "express": "^4.18.1",
+    "html-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "moment": "^2.29.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "svg-inline-loader": "^0.8.2",
+    "vue-loader": "^15.9.6",
+    "vue-loader-plugin": "^1.3.0",
+    "vue-style-loader": "^4.1.3",
+    "vue-template-compiler": "^2.6.12"
+  }
+}

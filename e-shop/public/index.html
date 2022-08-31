@@ -5,140 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="image/logo.svg" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Catalog</title>
+    <!-- <link rel="stylesheet" href="../public/css/style.css"> -->
+
 </head>
 
 <body>
     <div id="app">
-        <header class="header">
-            <nav class="nav container">
-                <div class="header-menu ">
-
-                    <div class="header-menu_logo">
-                        <img src="image/logo.svg" alt="logo">
-                    </div>
-                    <!-- строка поиска -->
-                    <search></search>
-
-                    <!-- block menu -->
-                    <menu_block></menu_block>
-
-                    <div class="header-menu_reg">
-                        <img src="image/registration.svg" alt="registration">
-                    </div>
-
-                    <!-- block cart -->
-                    <cart ref='cart'></cart>
-                </div>
-            </nav>
-
-        </header>
-
-        <nav class="header_chapter-info ">
-            <div class="chapter container">
-                <h4 class="chapter_title textLargeRegular">NEW ARRIVALS</h4>
-
-                <ul class="chapter_menu text">
-                    <li class="chapter_menu_li"><a href="#" class="chapter_menu_link">HOME</a></li>
-                    <li>&frasl;</li>
-                    <li class="chapter_menu_li"><a href="#" class="chapter_menu_link">MEN</a></li>
-                    <li>&frasl;</li>
-                    <li class="chapter_menu_li"><a href="#" class="chapter_menu_link">NEW ARRIVALS</a></li>
-                </ul>
-            </div>
-        </nav>
-
-
-
-
+        <header_block ref='header'></header_block>
+        <nav_menu ref='nav'></nav_menu>
 
         <main class="catalog container">
-            <nav class="catalog-menu">
-                <div class="filter">
-                    <div class="basic">
-                        <a href="#">
-                            <span>FILTER</span>
-                            <svg width="15" height="10" viewBox="0 0 15 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z"
-                                    fill="black" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="filter-menu">
-                        <div class="categoryMenu">
-                            <a href="#" class="title textRegular">CATEGORY</a>
-                            <div class="menuItems">
-                                <a href="#">Accessories</a>
-                                <a href="#">Bags</a>
-                                <a href="#">Denim</a>
-                                <a href="#">Hoodies & Sweatshirts</a>
-                                <a href="#">Jackets & Coats</a>
-                                <a href="#">Polos</a>
-                                <a href="#">Shirts</a>
-                                <a href="#">Shoes</a>
-                                <a href="#">Sweaters & Knits</a>
-                                <a href="#">T-Shirts</a>
-                                <a href="#">Tanks</a>
-                            </div>
-                        </div>
-
-                        <div class="brandMenu">
-                            <a href="#" class="title textRegular">BRAND</a>
-                        </div>
-
-                        <div class="designerMenu">
-                            <a href="#" class="title textRegular">DESIGNER</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sort">
-                    <ul>
-                        <li>
-                            <a class="trending" href="#">
-                                <span>TRENDING NOW</span>
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                        </li>
-                        <li class="size">
-                            <a href="#">
-                                <span>SIZE</span>
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <form class="size-sort textRegular">
-                                <div>
-                                    <input type="checkbox" id="xs" name="size">
-                                    <label for="xs">XS</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" id="s" name="size">
-                                    <label for="s">S</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" id="m" name="size">
-                                    <label for="m">M</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" id="l" name="size">
-                                    <label for="l">L</label>
-                                </div>
-                            </form>
-                        </li>
-                        <li>
-                            <a class="price" href="#">
-                                <span>PRICE</span>
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <catalog_menu ref='catalog_menu'></catalog_menu>
 
             <!-- catalog -->
             <div>
@@ -147,93 +25,13 @@
                 <filter-message></filter-message>
             </div>
 
-
-            <div class="pagination textMiddle">
-                <a href="#"><img src="image/product/left.svg" alt="left"></a>
-                <div class="pages">
-                    <a href="#" class="activePage">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <div class="hide">
-                        <a href="#">6</a>
-                        <span>.....</span>
-                        <a href="#">20</a>
-                    </div>
-                </div>
-                <a href="#"><img src="image/product/right.svg" alt="right"></a>
-            </div>
+            <pagination></pagination>
         </main>
 
-        <div class="customer-box">
-            <div class=" customer container">
-                <div class="customer-info">
-                    <img src="image/delivery.svg" alt="delivery" class="customer-info_img">
-                    <h4 class="customer-info_title textBig">Free Delivery</h4>
-                    <p class="customer-info_text text">Worldwide delivery on all. Authorit tively morph next-generation
-                        innov
-                        tion with extensive models.</p>
-                </div>
-                <div class="customer-info">
-                    <img src="image/sales.svg" alt="sales" class="customer-info_img">
-                    <h4 class="customer-info_title textBig">Sales & discounts</h4>
-                    <p class="customer-info_text text">Worldwide delivery on all. Authorit tively morph next-generation
-                        innov
-                        tion with extensive models.</p>
-                </div>
-                <div class="customer-info">
-                    <img src="image/quality.svg" alt="quality" class="customer-info_img">
-                    <h4 class="customer-info_title textBig">Quality assurance</h4>
-                    <p class="customer-info_text text">Worldwide delivery on all. Authorit tively morph next-generation
-                        innov
-                        tion with extensive models.</p>
-                </div>
-            </div>
-        </div>
-        <div class="subscribe-box">
-            <div class="shadow"></div>
-            <div class="container subscribe">
-                <div class="subscribe-speak">
-                    <img class="subscribe-speak_img" src="image/lady-speak.svg" alt="lady speak">
-                    <p class="subscribe-speak_info textBig">&ldquo;Vestibulum quis porttitor dui! Quisque viverra nunc
-                        mi, <i>a
-                            pulvinar
-                            purus condimentum</i>&rdquo;</p>
-                </div>
-                <div class="subscribe-mail">
-                    <h4 class="subscribe-mail_title">SUBSCRIBE </h4>
-                    <p class="subscribe-mail_text">FOR OUR NEWLETTER AND PROMOTION</p>
-                    <form class="mail" action="push_mail">
-                        <input id="field_mail" class="field_mail textRegular" placeholder="Enter Your Email" id="mail"
-                            name="email" type="email" value="">
-                        <input type="button" class="button_mail textRegular" id="button" value="Subscribe" />
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <footer class="footer-box">
-            <div class="footer container">
-                <p class="footer_text textMiddle">&copy; 2021 Brand All Rights Reserved.</p>
-                <footer_link></footer_link>
-            </div>
-
-        </footer>
+        <footer_block></footer_block>
     </div>
 
-    <script src="scripts/cart.js"></script>
-    <script src="scripts/footer.js"></script>
-    <script src="scripts/menu.js"></script>
-    <script src="scripts/catalogComponents.js"></script>
-    <script src="scripts/errorComponent.js"></script>
-    <script src="scripts/filterComponent.js"></script>
-    <!-- vue -->
-    <!-- <script src="scripts/cartVue.js"></script> -->
-    <!-- <script src="scripts/catalogVue.js"></script> -->
-    <script src="scripts/main.js"></script>
-
-    <script src="scripts/Catalog-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://kit.fontawesome.com/6a4be6137d.js" crossorigin="anonymous"></script>
 </body>
 
